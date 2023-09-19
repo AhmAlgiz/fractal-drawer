@@ -13,8 +13,8 @@ def main():
     newRule = input("Input rule: ")
     n = int(input("Enter N: "))
     r = int(input("Enter R: "))
-    alpha = int(input("Enter alpha: "))
-    theta = int(input("Enter theta: "))
+    alpha = float(input("Enter alpha: "))
+    theta = float(input("Enter theta: "))
     len = int(input("Enter length: "))
     width = int(input("Enter width: "))
     x0 , y0 = int(input("Enter x0: ")), int(input("Enter y0: "))
@@ -25,7 +25,8 @@ def main():
     for _ in range(0, n):
         fractal.len /= r
         axioma = axioma.replace('F', newRule)
-
+    
+    print(axioma)
     fractal.print(axioma)
 
     image.save(f"{name}.png")

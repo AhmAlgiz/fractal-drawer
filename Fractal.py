@@ -16,10 +16,10 @@ class Fractal:
         self.color = color
     
     def positive(self):
-        self.alpha -= self.theta
+        self.alpha += self.theta
     
     def negative(self):
-        self.alpha += self.theta
+        self.alpha -= self.theta
 
     def F(self):
         x2 = self.x1 + self.len * cos(radians(self.alpha))

@@ -45,7 +45,7 @@ def main():
         axioma = axioma.replace('F', newRule)
     
     printFractal(fractal, axioma)
-    print(axioma)
+    print("Result: ", axioma)
 
     image.save(f"{name}.png")
     image.show()

@@ -8,6 +8,7 @@ class Fractal:
         self.x1 = x0
         self.y1 = y0
         self.alpha = alpha
+        self.alpha0 = alpha
         self.theta = theta
         self.len = len
         self.width = width
@@ -28,12 +29,14 @@ class Fractal:
         self.y1 = y2
 
     def save(self):
-        self.x0 = self.x
-        self.y0 = self.y
+        self.x0 = self.x1
+        self.y0 = self.y1
+        self.alpha0 = self.alpha
     
     def back(self):
-        self.x = self.x0
-        self.y = self.y0
+        self.x1 = self.x0
+        self.y1 = self.y0
+        self.alpha = self.alpha0
     
     def print(self, rule):
         for s in rule:

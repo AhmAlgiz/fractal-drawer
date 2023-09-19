@@ -2,6 +2,24 @@ from PIL import Image, ImageDraw
 from math import pi
 from Fractal import Fractal
 
+def printFractal(fractal, rule):
+    while rule:
+        c = rule[0]
+        match c:
+            case "F":
+                fractal.F()
+            case "+":
+                fractal.positive()
+            case "-":
+                fractal.negative()
+            case "[":
+                f = fractal.__copy__()
+                rule = printFractal(f, rule[1:])
+            case "]":
+                return rule
+        rule = rule[1:]
+
+
 def main():
 
     width, height = 1000, 1000
@@ -26,8 +44,8 @@ def main():
         fractal.len /= r
         axioma = axioma.replace('F', newRule)
     
+    printFractal(fractal, axioma)
     print(axioma)
-    fractal.print(axioma)
 
     image.save(f"{name}.png")
     image.show()

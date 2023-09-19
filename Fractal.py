@@ -38,18 +38,9 @@ class Fractal:
         self.y1 = self.y0
         self.alpha = self.alpha0
     
-    def print(self, rule):
-        for s in rule:
-            match s:
-                case "F":
-                    self.F()
-                case "+":
-                    self.positive()
-                case "-":
-                    self.negative()
-                case "[":
-                    self.save()
-                case "]":
-                    self.back()
+    def __copy__(self):
+        newFractal = self.__class__(self.x1, self.y1, self.alpha, 
+                                    self.theta, self.len, self.width, self.image, self.color)
+        return newFractal
 
 

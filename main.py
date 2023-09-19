@@ -8,7 +8,6 @@ def main():
     image = Image.new("RGB", (width, height), "skyblue")
     draw = ImageDraw.Draw(image)
     color = (0,0,0)
-    n = 2
 
     axioma = input("Input axioma: ")
     newRule = input("Input rule: ")
@@ -27,7 +26,6 @@ def main():
         fractal.len /= r
         axioma = axioma.replace('F', newRule)
 
-    print(axioma)
     fractal.print(axioma)
 
     image.save(f"{name}.png")
